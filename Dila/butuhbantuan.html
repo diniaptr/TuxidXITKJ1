@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Bantuan TUX ID</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+  <div class="container py-4">
+    <a href="../Dila/masukakun.html" class="text-dark text-decoration-none mb-3 d-inline-block">&larr;</a>
+    <h5 class="fw-bold mb-2">Apa yang Bisa Kami Bantu?</h5>
+    <p class="text-muted mb-4" style="font-size: 0.9rem;">Hubungi layanan konsumen kami untuk mendapat bantuan transaksi atau penggunaan aplikasi.</p>
+    
+    <form>
+      <div class="mb-3">
+        <label for="subyek" class="form-label">SUBYEK<span class="text-danger">*</span></label>
+        <input type="text" class="form-control" id="subyek" placeholder="Apa yang dapat kami bantu?">
+      </div>
+
+      <div class="mb-3">
+        <label for="nomorOrder" class="form-label">NOMOR ORDER <span class="text-muted" data-bs-toggle="tooltip" title="Nomor order kamu dari aplikasi">(?)</span></label>
+        <input type="text" class="form-control" id="nomorOrder" placeholder="Masukkan nomor order anda...">
+      </div>
+
+      <div class="mb-3">
+        <label for="pesan" class="form-label">PESAN<span class="text-danger">*</span></label>
+        <textarea class="form-control" id="pesan" rows="3" placeholder="Masukkan pesan anda..."></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">TANGKAPAN LAYAR</label>
+        <p class="text-muted" style="font-size: 0.85rem;">Untuk respon yang lebih baik, anda dapat menyelipkan screenshot yang menampilkan masalah di aplikasi</p>
+        <div class="d-flex gap-3">
+          <div class="border border-secondary-subtle rounded d-flex justify-content-center align-items-center" style="width: 64px; height: 64px;">
+            <span class="fs-3">+</span>
+          </div>
+          <div class="border border-secondary-subtle rounded d-flex justify-content-center align-items-center" style="width: 64px; height: 64px;">
+            <span class="fs-3">+</span>
+          </div>
+          <div class="border border-secondary-subtle rounded d-flex justify-content-center align-items-center" style="width: 64px; height: 64px;">
+            <span class="fs-3">+</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-danger small">*Mohon untuk mengisi seluruh formulir</p>
+
+      <button type="submit" class="btn btn-primary w-100">Kirim Email</button>
+    </form>
+
+    <div class="mt-4 text-center text-muted" style="font-size: 0.85rem;">
+      Kami akan membalas email anda sesegera mungkin pada jam operasional yaitu 07:00 sampai dengan 22:00 WIB
+    </div>
+
+    <div class="mt-4 text-center" style="font-size: 0.9rem;">
+      <strong>Layanan Pengaduan Konsumen</strong><br>
+      TUX ID Customer Support<br>
+      Email: <a href="mailto:help@tux.id">help@tux.id</a><br><br>
+      Direktorat Jenderal Perlindungan Konsumen dan Tertib Niaga, Kementerian Perdagangan Republik Indonesia<br>
+      WhatsApp Ditjen PKTN: +62 111-123-234
+    </div>
+  </div>
+
+  <!-- Bootstrap JS (for tooltip) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

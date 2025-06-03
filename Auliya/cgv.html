@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TUX ID - Homepage</title>
+    <!-- Bootstrap CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        :root {
+            --primary-bg: #2b4976;
+            --secondary-bg: #b2d5fd;
+            --footer-bg: #212529;
+            --nav-bg: #f8f9fa;
+            --text-light: #ffffff;
+            --text-dark: #000000;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            flex-shrink: 0;
+            background-color: var(--primary-bg);
+            color: var(--text-light);
+        }
+
+        .promo-banner {
+            background-color: var(--secondary-bg);
+            color: var(--text-dark);
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .movie-section {
+            padding: 1rem;
+        }
+
+        .movie-buttons {
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .movie-buttons button {
+            border-radius: 20px;
+            border: 1px solid var(--primary-bg);
+            background-color: var(--secondary-bg);
+            color: var(--primary-bg);
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .movie-buttons button:hover {
+            background-color: var(--primary-bg);
+            color: var(--text-light);
+        }
+
+        .movie-carousel {
+            display: flex;
+            overflow-x: hidden;
+            gap: 1rem;
+            padding: 0 1rem;
+            position: relative;
+        }
+
+        .movie-card {
+            min-width: 250px;
+            flex-shrink: 0;
+            border: none;
+        }
+
+        .movie-poster {
+            max-height: 250px;
+            object-fit: cover;
+        }
+
+        .carousel-buttons {
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            z-index: 1;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+
+        .carousel-buttons button {
+            background-color: rgba(43, 73, 118, 0.8);
+            color: var(--text-light);
+            border: none;
+            border-radius: 50%;
+            pointer-events: auto; /* Enable button clicks */
+            font-size: 1.5rem;
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @media (max-width: 576px) {
+            #adCarousel img {
+                max-width: 80%;
+                margin: auto;
+            }
+        }
+
+        @media (max-width: 576px) {
+            #adCarousel img {
+                max-width: 80%;
+                margin: auto;
+            }
+        }
+        button {
+            background: transparent;
+            border: none;
+            padding: 0;
+        }
+
+        footer {
+            background-color: var(--footer-bg);
+            color: var(--text-light);
+            padding: 1rem;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .navbar {
+            background-color: var(--nav-bg);
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+
+        .navbar a.active {
+            color: var(--primary-bg);
+        }
+
+        main {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding-bottom: 70px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="p-3 d-flex justify-content-between align-items-center">
+        <h1 class="fs-4 mb-0">TUX ID</h1>
+        <button class="btn btn-light" onclick="window.location.href='../Dila/masukakun.html'">Masuk/Daftar</button>
+    </header>
+    <main>
+        <!-- Promo Banner -->
+        <div class="promo-banner">
+            <h2>Beli Tiket Film Bioskop Hemat</h2>
+            <p>Cashback s/d <strong>10RB</strong></p>
+            <span>Beli Tiketmu Sekarang!</span>
+        </div>
+
+        <!-- Movies Section -->
+        <section class="movie-section">
+            <h2 class="text-center mb-3">Sedang Tayang</h2>
+            <div class="carousel-container">
+                <div class="carousel-buttons">
+                    <button onclick="scrollCarousel(-1)"><i class="fas fa-chevron-left"></i></button>
+                    <button onclick="scrollCarousel(1)"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="movie-buttons">
+                    <button onclick="window.location.href='index.html'">Semua Film</button>
+                    <button onclick="window.location.href='xxi.html'">XXI</button>
+                    <button onclick="window.location.href='cgv.html'">CGV</button>
+                    <button onclick="window.location.href='cinepolis.html'">Cinépolis</button>
+                </div>
+                <div class="movie-carousel d-flex flex-row gap-3">
+                    <div class="card movie-card" onclick="window.location.href='../Kaysa/simanisjembatanancol.html'">
+                        <img src="https://i1.wp.com/cdn-brilio-net.akamaized.net/news/2020/01/29/177999/1167051-1000xauto-film-horor-indonesia-terbaik.jpg" class="card-img-top movie-poster" alt="Movie Poster">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Si Manis Jembatan Ancol</h5>
+                            <button class="btn btn-primary btn-sm">Beli Tiket</button>
+                        </div>
+                    </div>
+                    <div class="card movie-card" onclick="window.location.href='../Andini/Jendelaseribusungai.html'">
+                        <img src="https://www.baritopost.co.id/wp-content/uploads/2023/06/5c25295b-f11b-435b-be60-3af5a7730485.jpg" class="card-img-top movie-poster" alt="Movie Poster">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Jendela Seribu Sungai</h5>
+                            <button class="btn btn-primary btn-sm">Beli Tiket</button>
+                        </div>
+                    </div>
+                    <div class="card movie-card" onclick="window.location.href='../Andini/vinasebelum7hari.html'">
+                        <img src="https://akcdn.detik.net.id/community/media/visual/2024/03/29/vina-sebelum-7-hari.jpeg?w=700&q=90" class="card-img-top movie-poster" alt="Movie Poster">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Vina Sebelum 7 Hari</h5>
+                            <button class="btn btn-primary btn-sm">Beli Tiket</button>
+                        </div>
+                    </div>
+                    <div class="card movie-card" onclick="window.location.href='../Kaysa/Dilan1990.html'">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqfxPEyCnPlQWhDjz02sBU-w3rmht-SUeLPw&s" class="card-img-top movie-poster" alt="Movie Poster">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Dilan 1990</h5>
+                            <button class="btn btn-primary btn-sm">Beli Tiket</button>
+                        </div>
+                    </div>
+                    <div class="card movie-card" onclick="window.location.href='../Kaysa/Dreadout.html'">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm3qrhMwGXTNSZhNRRNx2ktjSEkk8qkrWokA&s" class="card-img-top movie-poster" alt="Movie Poster">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Dread Out</h5>
+                            <button class="btn btn-primary btn-sm">Beli Tiket</button>
+                        </div>
+                    </div>
+                    <div class="card movie-card" onclick="window.location.href='../Kaysa/Tenung.html'">
+                        <img src="https://i.pinimg.com/originals/f2/f4/67/f2f46797034b86f13f15f24935c79995.jpg" class="card-img-top movie-poster" alt="Movie Poster">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Tenung</h5>
+                            <button class="btn btn-primary btn-sm">Beli Tiket</button>
+                        </div>
+                    </div>
+                    <div class="card movie-card" onclick="window.location.href='../Kaysa/Exhuma.html'">
+                        <img src="https://image.tmdb.org/t/p/original/8ivRwHjfpej0uHXQaxQtJacGbOP.jpg" class="card-img-top movie-poster" alt="Movie Poster">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Exhuma</h5>
+                            <button class="btn btn-primary btn-sm">Beli Tiket</button>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="container text-center mt-4">
+                <div id="adCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <a href="../Rara/makan.html">
+                                <img src="https://media.istockphoto.com/id/1476402218/id/vektor/poster-iklan-camilan-popcorn-renyah-dengan-ember-bergaris-dan-biji-bijian-iklan-makanan.jpg?s=170667a&w=0&k=20&c=muhSJ0Tr60dDORhBmURYwkbKO1caoVPR0CK7iDuFpGE=" class="d-block w-100" alt="TIX Food Ad">
+                            </a>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#adCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#adCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>     
+            
+        </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 TUX ID. All Rights Reserved.</p>
+        <p><a href="#" class="text-light">Privacy Policy</a> | <a href="#" class="text-light">Terms of Service</a></p>
+    </footer>
+
+    <!-- Bottom Navigation -->
+    <nav class="navbar">
+        <div class="container-fluid d-flex justify-content-around">
+            <a href="./cgv.html" class="text-center active">
+                <i class="fas fa-home"></i>
+                <p class="mb-0">Home</p>
+            </a>
+            <a href="../Dila/bioskop.html" class="text-center">
+                <i class="fas fa-film"></i>
+                <p class="mb-0">Bioskop</p>
+            </a>
+            <a href="./tiketaktif.html" class="text-center">
+                <i class="fas fa-ticket-alt"></i>
+                <p class="mb-0">Tiket</p>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3b1o9ZaZfU5oa5aW1dB2F0W+STrt30uhxd5vM6J2YxHRe5jzEphBfQQFgwZHDPA" crossorigin="anonymous"></script>
+
+    <script>
+        const scrollCarousel = (direction) => {
+            const carousel = document.querySelector('.movie-carousel');
+            const scrollAmount = direction * 300; // Adjust scroll step size
+            carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        };
+
+        const scrollAd = (direction) => {
+            const adCarousel = document.querySelector('.ad-carousel');
+            const scrollAmount = direction * 300;
+            adCarousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        };
+    </script>
+</body>
+
+</html>

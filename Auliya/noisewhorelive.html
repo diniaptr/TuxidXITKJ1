@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wonder Universe - TUX ID</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+      color: #000;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .header .title {
+      font-weight: bold;
+      font-size: 20px;
+      color: #654ea3;
+    }
+
+    .banner img {
+      width: 100%;
+      height: auto;
+    }
+
+    .info-box {
+      padding: 16px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .info-box h2 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .info-box p {
+      margin: 6px 0;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 2px 6px;
+      background-color: #000;
+      color: white;
+      font-size: 10px;
+      border-radius: 3px;
+      margin-top: 8px;
+    }
+
+    .ticket-section {
+  padding: 16px;
+  padding-bottom: 150px; /* supaya gak ketutupan tombol */
+}
+
+
+    .ticket-header {
+      font-weight: bold;
+      margin-bottom: 12px;
+      font-size: 16px;
+    }
+
+    .ticket {
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      padding: 12px;
+      margin-bottom: 16px;
+    }
+
+    .ticket-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .ticket-title h4 {
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .toggle-btn {
+      background: #a033b3;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      padding: 5px 12px;
+      cursor: pointer;
+    }
+
+    .ticket-options {
+      display: none;
+      margin-top: 12px;
+      border-top: 1px dashed #ccc;
+      padding-top: 10px;
+    }
+
+    .ticket-option {
+      border: 1px solid #a033b3;
+      border-radius: 8px;
+      padding: 10px;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .ticket-option select {
+      float: right;
+      padding: 4px;
+      border-radius: 5px;
+    }
+
+    .ticket-option strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .summary-bar {
+      position: fixed;
+      bottom: 60px;
+      left: 0;
+      right: 0;
+      background-color: #f6f6f6;
+      padding: 12px 16px;
+      border-top: 1px solid #ccc;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .buy-btn {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #ffc107;
+      text-align: center;
+      padding: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <a href="./event.html"><span>←</span></a>
+    <div class="title">TUX <span style="color:#ff80ab;">EVENTS</span></div>
+    <a href="#"><span>🔗</span></a>
+  </div>
+
+  <div class="banner">
+    <img src="http://tix-event-asset-staging.s3.ap-southeast-1.amazonaws.com/pn_event_ticketing/toucheamorejkt/fe721ed8-91bf-450f-ab8a-f84e1717c92c.webp" alt="Wonder Banner">
+  </div>
+
+  <div class="info-box">
+    <p><strong>📅 Date</strong><br>21 July 2025</p>
+    <p><strong>🕘 Time</strong><br>7 PM</p>
+    <p><strong>📍 Location</strong><br>Toba Dream</p>
+  </div>
+
+  <div class="info-box">
+    <h2>Noisewhore Live: Touché Amoré Live in Jakarta</h2>
+    <div class="tag">Concerts</div>
+    <p>-</p>
+  </div>
+
+  <div class="ticket-section">
+    <p class="ticket-header">🎟️ TICKETS</p>
+
+    <!-- Ticket Group -->
+    <div class="ticket">
+      <div class="ticket-title">
+        <h4>NW Live x PCS</h4>
+        <button class="toggle-btn" onclick="toggleOptions('kids')">Select Ticket</button>
+      </div>
+      <div id="ticket-options-kids" class="ticket-options">
+        <div class="ticket-option">
+          <strong>NW Live x PCS: Touché Amoré Live in Jakarta</strong>
+          <div style="margin-top: 8px;">Rp 500.000
+            <select class="ticket-qty" data-price="500000">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+            </select>
+        </div>
+        </div>
+      </div>
+    </div>
+  <div class="summary-bar">
+    <div>
+      <p style="margin: 0;">1 Ticket selected</p>
+      <small>Extra charges may apply</small>
+    </div>
+    <div style="font-weight: bold;">Rp 0</div>
+  </div>
+
+  <div class="buy-btn" onclick="redirectToBayar()">
+  BUY TICKET
+</div>
+
+
+  <script>
+    function toggleOptions(id) {
+      const el = document.getElementById("ticket-options-" + id);
+      el.style.display = el.style.display === "block" ? "none" : "block";
+    }
+    
+  </script>
+  
+<script>
+  function toggleOptions(id) {
+    const el = document.getElementById("ticket-options-" + id);
+    el.style.display = el.style.display === "block" ? "none" : "block";
+  }
+
+  function updateSummary() {
+    const selects = document.querySelectorAll('.ticket-qty');
+    let totalHarga = 0;
+    let totalTiket = 0;
+
+    selects.forEach(select => {
+      const qty = parseInt(select.value);
+      const price = parseInt(select.getAttribute('data-price'));
+      totalHarga += qty * price;
+      totalTiket += qty;
+    });
+
+    // Format harga ke Rupiah
+    const formatter = new Intl.NumberFormat('id-ID', {
+      style: 'currency',
+      currency: 'IDR',
+      minimumFractionDigits: 0
+    });
+
+    document.querySelector('.summary-bar p').innerText = `${totalTiket} Ticket selected`;
+    document.querySelector('.summary-bar div:last-child').innerText = formatter.format(totalHarga);
+  }
+
+  // Pas user ubah select, update total
+  document.addEventListener('DOMContentLoaded', () => {
+    const selects = document.querySelectorAll('.ticket-qty');
+    selects.forEach(select => {
+      select.addEventListener('change', updateSummary);
+    });
+    updateSummary(); // trigger awal
+  });
+</script>
+<script>
+function redirectToBayar() {
+  const selects = document.querySelectorAll('.ticket-qty');
+  let totalHarga = 0;
+  let items = [];
+
+  selects.forEach(select => {
+    const qty = parseInt(select.value);
+    const price = parseInt(select.getAttribute('data-price'));
+    if (qty > 0) {
+      const nama = select.closest('.ticket-option').querySelector('strong').innerText;
+      items.push(`${nama} x${qty}`);
+      totalHarga += qty * price;
+    }
+  });
+
+  const encodedItems = encodeURIComponent(items.join(', '));
+  window.location.href = `../Kayla/bayarnoise.html?items=${encodedItems}&total=${totalHarga}`;
+}
+</script>
+
+</body>
+</html>

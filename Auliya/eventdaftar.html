@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daftar Transaksi - Event</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+  <style>
+    :root {
+      --primary-bg: #2b4976;
+      --secondary-bg: #b2d5fd;
+      --footer-bg: #212529;
+      --nav-bg: #f8f9fa;
+      --text-light: #ffffff;
+      --text-dark: #000000;
+    }
+
+    .navbar {
+      background-color: var(--nav-bg);
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .navbar a {
+      color: var(--text-dark);
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    .navbar a.active {
+      color: var(--primary-bg);
+    }
+
+    main {
+      flex-grow: 1;
+      overflow-y: auto;
+      padding-bottom: 70px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar Atas -->
+<nav class="navbar bg-white shadow-sm px-3">
+  <input class="form-control me-2" type="search" placeholder="Cari di TIX ID">
+  <div class="d-flex">
+    <div class="me-3"><i class="bi bi-person-circle"></i></div>
+  </div>
+</nav>
+
+<!-- Tab Transaksi -->
+<div class="container mt-4">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" href="./tiketaktif.html">Tiket Aktif</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="./daftartransaksi.html">Daftar Transaksi</a>
+    </li>
+  </ul>
+
+  <!-- Kategori Tombol -->
+  <div class="btn-group mt-3 w-100" role="group">
+    <a href="./daftartransaksi.html" class="btn btn-outline-primary">Film</a>
+    <a href="./makandaftar.html" class="btn btn-outline-primary">Makanan</a>
+    <a href="./eventdaftar.html" class="btn btn-outline-primary active">Event</a>
+    <a href="./voucher.html" class="btn btn-outline-primary">Voucher</a>
+  </div>
+
+  <!-- Konten Kosong -->
+  <div class="text-center mt-5">
+    <img src="https://img.icons8.com/ios/100/conference.png" alt="event icon"/>
+    <h5 class="mt-3">Belum Ada Transaksi Event</h5>
+    <p>Kamu belum mengikuti event apapun. Yuk, cari event seru yang bisa kamu ikuti!</p>
+    <a href="./event.html" class="btn btn-dark px-4 py-2">Lihat Event</a>
+  </div>
+</div>
+
+<!-- Navbar Bawah -->
+<nav class="navbar">
+  <div class="container-fluid d-flex justify-content-around">
+    <a href="./index.html" class="text-center active">
+      <i class="fas fa-home"></i>
+      <p class="mb-0">Home</p>
+    </a>
+    <a href="../Dila/bioskop.html" class="text-center">
+      <i class="fas fa-film"></i>
+      <p class="mb-0">Bioskop</p>
+    </a>
+    <a href="./tiketaktif.html" class="text-center">
+      <i class="fas fa-ticket-alt"></i>
+      <p class="mb-0">Tiket</p>
+    </a>
+  </div>
+</nav>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
